@@ -1,0 +1,10 @@
+body{
+	font-family: $base-font-family;
+	font-size:$base-font-size;
+	color: $base-font-color;
+}
+
+h1, h2, h3, h4, h5, h6{
+	color:$base-font-color;
+	margin:0px;
+}

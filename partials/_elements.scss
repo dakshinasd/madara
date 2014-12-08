@@ -1,0 +1,203 @@
+/*--------------------- Base CSS ------------------------------*/
+
+// body
+body{
+	margin:0px;
+}
+
+
+// anchors
+a{
+	color:$anchor-color;
+	text-decoration: none;
+	outline:none;
+
+	// text decoration hover styles
+	&:hover, &:focus{
+		color:$anchor-focus;
+		text-decoration: underline;
+	}
+
+	&[href^=tel]{
+	    color:inherit;
+	    text-decoration:none;
+	}
+}
+
+// paragraphs
+p{
+	font-size: inherit;
+}
+
+
+// unstyled lists
+ul.unstyled-list{
+	padding-left: 0px;
+	margin: 0px;
+
+	li{
+		list-style: none;
+	}
+}
+
+
+// text alignment
+.text-align-left{
+	text-align: left;
+}
+
+.text-align-center{
+	text-align: center;
+}
+
+.text-align-right{
+	text-align: right;
+}
+
+// form controls
+.ot-form-control{
+	@include border-radius(0px); 
+}
+
+.vd-form-element-error{
+    border:1px solid #e6aaaa;
+    background-color: #f8e1e1;
+    color:#e6aaaa;
+
+    &:focus{
+    	border:1px solid #e6aaaa;
+    }
+}
+
+.vd-form-element-error-message{
+    color: #d37a7a;
+    display: block;
+    font-size: 0.9em;
+    padding: 3px 0;
+    text-align: right;
+}
+
+.vd-form-section-header{
+    color:#434343;
+}
+
+.vd-form-description{
+    font-size: 0.9em;
+    font-weight: $font-normal;
+}
+
+// input elements
+textarea:focus, 
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+input[type="datetime"]:focus, 
+input[type="datetime-local"]:focus, 
+input[type="date"]:focus, 
+input[type="month"]:focus, 
+input[type="time"]:focus, 
+input[type="week"]:focus, 
+input[type="number"]:focus, 
+input[type="email"]:focus, 
+input[type="url"]:focus, 
+input[type="search"]:focus, 
+input[type="tel"]:focus, 
+input[type="color"]:focus, 
+.uneditable-input:focus {
+    border-color:none;
+    box-shadow:none;
+    outline: 0 none;
+}
+
+// pagination
+.vd-pagination {
+	li{
+		&:first-child >a{
+	    	border-radius: 0px;
+		}
+
+		&:last-child > a{
+			margin-right: 0px;
+		}
+	}
+
+	li>a{
+		border:1px solid #c9c9c9;
+	    color:#656565 !important;
+	    margin-right:5px;
+	}
+
+	a{
+		.active-page{
+			color:#ff4848 !important;
+		}
+	}
+}
+
+
+a.btn.pull-right{
+    margin-left: 5px;
+}
+
+
+// jquery ui auto complete
+.ui-autocomplete{
+    z-index: 9999;
+
+    .ui-state-focus{
+	    background-color: #d4681f !important;
+	    color: #fff;
+	    cursor: pointer;
+	    background-image: none;
+	    border:none;
+	    min-height: 20px;
+	    font-weight: 400;
+	    border-bottom: 1px solid #ccc;
+    }
+}
+
+.ui-datepicker-title{
+	select{
+	    color:#333;
+	    font-size: 0.9em;
+	    font-weight: 400;
+	    padding:3px;
+	}
+}
+
+// bootstrap datepicker override
+.bootstrap-timepicker-widget{
+    border-radius: 0px;    
+
+    input[type=text]{
+	    border-radius: 0px;
+	    border:1px solid #ccc
+	}
+}
+
+// tags
+.vd-tag-list{
+    padding-left: 0px;
+
+ 	.vd-tag-item{
+	    list-style: none;
+	    float: left;
+	    padding:5px 10px;
+	    margin:0 5px 5px 0;
+	    font-size: 0.85em;
+
+	    i{
+	    	margin-left: 5px;
+		}
+	}
+}
+
+// label override
+.vd-label{
+    @include border-radius(0px);
+    font-weight: $font-normal;
+}
+
+.vd-timepicker{
+    border:1px solid #ccc
+}
+/*--------------------- EOF Base CSS ---------------------------*/
