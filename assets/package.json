@@ -1,0 +1,14 @@
+{
+    "name": "Madara Bolierplate",
+    "description": "Built with Madara boilerplate",
+    "version": "0.4.0",
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-contrib-concat": "^0.5.0",
+        "grunt-contrib-csslint": "^0.3.1",
+        "grunt-contrib-cssmin": "^0.10.0",
+        "grunt-contrib-sass": "^0.8.1",
+        "grunt-contrib-uglify": "^0.6.0",
+        "grunt-contrib-watch": "^0.6.1"
+    }
+}

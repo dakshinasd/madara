@@ -1,0 +1,27 @@
+// main sidebar
+$sidebar-anchor:#aaa;
+.main-nav-sidebar-container{
+	color:$sidebar-anchor;
+	height:100%;
+	background: url(../img/common/sidebar-bg.jpg) repeat-x  #282e33;
+
+	.sidebar-logo{
+		width: 100%;
+		height: 50px;
+		background-color: $anchor-color;
+		margin-left: -15px;
+	}
+
+	// sidebar navigation
+	.main-nav-sidebar{
+		li{
+			padding-left: 20px;
+		}
+	}
+
+	a{
+		color:$sidebar-anchor;
+		padding-top: 10px;
+		display: block;
+	}
+}
