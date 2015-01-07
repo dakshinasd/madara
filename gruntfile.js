@@ -13,7 +13,7 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'build/css/default.css': 'build/sass/default.scss'
+                    'dev/assets/build/css/default.css': 'dev/assets/build/sass/default.scss'
                 }
             } 
         },
@@ -23,13 +23,13 @@ module.exports = function(grunt) {
         //concat all the JS files
         concat: {   
             scripts: {
-                src: ['build/js/jquery.js', 'build/js/bootstrap.min.js'],
-                dest: 'js/UI_production.js'
+                src: ['dev/assets/build/js/jquery.js', 'dev/assets/build/js/bootstrap.min.js'],
+                dest: 'dev/js/UI_production.js'
             },
 
             styles: {
-                src: ['build/css/bootstrap.min.css','build/css/default.css'],
-                dest: 'css/UI_production.css'
+                src: ['dev/assets/build/css/bootstrap.min.css','dev/assets/build/css/default.css'],
+                dest: 'dev/css/UI_production.css'
             }
         },
 
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'js/UI_production.min.js': ['js/UI_production.js']
+                    'dev/js/UI_production.min.js': ['dev/js/UI_production.js']
                 }
             }
         },
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
                     banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
                 },
                 files: {
-                  'css/UI_production.min.css': ['css/UI_production.css']
+                  'dev/css/UI_production.min.css': ['dev/css/UI_production.css']
                 }
             }
         },
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
         //watch script
         watch:{
             scripts:{
-                files:['build/js/*'],
+                files:['dev/assets/build/js/*'],
                 tasks:['concat:scripts', 'uglify'],
                 options:{
                     spawn:false
@@ -64,13 +64,22 @@ module.exports = function(grunt) {
             },
 
             styles:{
-                files:['build/sass/**/*.scss', 'build/css/*'],
+                files:['dev/assets/build/sass/**/*.scss', 'dev/assets/build/css/*'],
                 tasks:['sass', 'concat:styles', 'cssmin'],
                 options:{
                     spawn:false
                 }
             }
-        }
+        },
+
+        //copy all the production ready files to production folder
+        copy: {
+          main: {
+            src: 'dev/**',
+            dest: 'production/',
+            flatten:true
+          },
+        },
 
     });
 
@@ -81,6 +90,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-csslint');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('default', ['watch']);
