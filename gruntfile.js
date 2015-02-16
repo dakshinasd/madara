@@ -24,12 +24,12 @@ module.exports = function(grunt) {
         concat: {   
             scripts: {
                 src: ['dev/assets/build/js/jquery.js', 'dev/assets/build/js/bootstrap.min.js'],
-                dest: 'dev/js/UI_production.js'
+                dest: 'dev/assets/js/UI_production.js'
             },
 
             styles: {
                 src: ['dev/assets/build/css/bootstrap.min.css','dev/assets/build/css/default.css'],
-                dest: 'dev/css/UI_production.css'
+                dest: 'dev/assets/css/UI_production.css'
             }
         },
 
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'dev/js/UI_production.min.js': ['dev/js/UI_production.js']
+                    'dev/assets/js/UI_production.min.js': ['dev/assets/js/UI_production.js']
                 }
             }
         },
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
                     banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
                 },
                 files: {
-                  'dev/css/UI_production.min.css': ['dev/css/UI_production.css']
+                  'dev/assets/css/UI_production.min.css': ['dev/assets/css/UI_production.css']
                 }
             }
         },
